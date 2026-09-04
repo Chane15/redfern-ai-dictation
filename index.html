@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Assisted Attorney Dictation | Redfern Inc Attorneys</title>
+<style>
+  :root {
+    --redfern-pink: #C31F5B;
+    --redfern-charcoal: #3B3B3B;
+    --redfern-blue: #2C7FB8;
+    --bg: #FAFAFA;
+    --border: #E4E4E4;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--redfern-charcoal);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    background-color: #FFFFFF;
+    border-bottom: 3px solid var(--redfern-pink);
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  header img {
+    height: 64px;
+    width: auto;
+  }
+
+  header .header-text h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--redfern-charcoal);
+    letter-spacing: 0.3px;
+  }
+
+  header .header-text span {
+    font-size: 13px;
+    color: var(--redfern-pink);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px 24px;
+    text-align: center;
+  }
+
+  main h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    color: var(--redfern-charcoal);
+  }
+
+  main p.description {
+    max-width: 640px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #5A5A5A;
+    margin: 0 0 8px;
+  }
+
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--redfern-pink), var(--redfern-blue));
+    margin: 20px 0 36px;
+    border-radius: 2px;
+  }
+
+  .chat-container {
+    width: 100%;
+    max-width: 780px;
+    height: 640px;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    overflow: hidden;
+    flex: 1;
+  }
+
+  /* Voiceflow injects its embedded widget as a child element
+     inside #chat-container; stretch it to fill the panel. */
+  .chat-container > * {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .chat-placeholder {
+    color: #A0A0A0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 12px;
+    color: #9A9A9A;
+    border-top: 1px solid var(--border);
+    background-color: #FFFFFF;
+  }
+
+  /* ==========================================================
+     VOICEFLOW WIDGET STYLING (optional overrides)
+     If your Voiceflow widget renders as a floating launcher,
+     these rules are safe to leave as-is or remove entirely.
+     ========================================================== */
+</style>
+</head>
+<body>
+
+<header>
+  <img src="redfern-logo.png" alt="Redfern Incorporated Attorneys logo">
+  <div class="header-text">
+    <h1>Redfern Incorporated Attorneys</h1>
+    <span>Internal Tool</span>
+  </div>
+</header>
+
+<main>
+  <h2>AI-Assisted Attorney Dictation</h2>
+  <p class="description">
+    An internal Redfern Incorporated tool for converting attorney voice dictations into structured, review-ready legal drafts. AI prepares and flags. Human staff verify. The attorney decides and approves.
+  </p>
+  <div class="divider"></div>
+
+  <div class="chat-container" id="chat-container">
+    <p class="chat-placeholder">Loading dictation assistant…</p>
+  </div>
+</main>
+
+<footer>
+  Redfern Incorporated Attorneys &mdash; Internal Use Only
+</footer>
+
+<!-- ==========================================================
+     VOICEFLOW WIDGET CODE
+     Paste the Voiceflow Widget Chatbot embed script below,
+     between the markers. Do not modify anything above this
+     block unless you are changing the page layout/branding.
+     ========================================================== -->
+
+<!-- VOICEFLOW WIDGET START -->
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '6a9a9282b50c60a5742bdf97' },
+          url: 'https://general-runtime.voiceflow.com',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          },
+          render: {
+            mode: 'embedded',
+            target: document.getElementById('chat-container')
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+<!-- VOICEFLOW WIDGET END -->
+
+</body>
+</html>
